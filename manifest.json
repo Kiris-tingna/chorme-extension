@@ -1,0 +1,16 @@
+{  
+  "name": "MyChormeExtension",
+  "manifest_version": 2, 
+  "version": "0.1.0", 
+  "description": "扇贝的小作业", 
+  "browser_action": {  
+    "default_icon": "icon.png" ,
+    "default_title": "My Chorme Extension",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{  
+    "matches": ["http://www.theguardian.com/*"],  
+    "js": ["filter.js"],  
+    "run_at": "document_end"
+  }]   
+} 
