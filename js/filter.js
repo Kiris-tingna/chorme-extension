@@ -1,37 +1,22 @@
-// ------------ dom 节点 操作 -------------------
-var Dom = {
-    get: function(el) {
-        if(typeof el === 'string'){
-            return document.getElementById(el);
-        }else{
-            return el;
-        }
-    },
-    remove: function(el) {
-        var el = this.get(el);
-        el.parentNode.removeChild(el);
-    },
-    clxNode: function(className) {
-        var el =document.querySelector(className);
-        el.parentNode.removeChild(el);
-    }
-};
-
-// --------------- 删除无响应的多余js ------------------
-window.onload = function(){
+// --------------- 删除无响应的多余js 和 广告 ------------------
+$(function(){
     while(document.head.getElementsByTagName('script').length>0){
         document.head.removeChild(document.head.getElementsByTagName('script')[0]);
     }
+    // 删除所有iframe
+    try{$('iframe').remove()}catch(e){throw "Ex 0"}
     // 删除头部广告
     // Dom.remove('dfp-ad--top-above-nav');
-    Dom.clxNode('.top-banner-ad-container');
-    Dom.remove('dfp-ad--inline1');
-    Dom.remove('more-on-this-story');
+    $('.top-banner-ad-container').remove();
+    try{$('#dfp-ad--inline1').remove()}catch(e){throw "Ex 1"}
+    try{$('#more-on-this-story').remove()}catch(e){throw "Ex 2"}
     // 删除头部
-    Dom.remove('header');
-    // 删除尾部
-    Dom.clxNode('.content-footer');
-    Dom.clxNode('.l-footer');
+    try{$('#header').remove()}catch(e){throw "Ex 3"}
 
+    $('.content__meta-container').remove();
+    // 删除尾部
+    $('.submeta').remove();
+    $('.content-footer').remove();
+    $('.l-footer').remove();
     //console.log(Dom.get('article'));
-};
+});

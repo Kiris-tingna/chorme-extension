@@ -6,14 +6,14 @@
   "background": {
     "page":"background.html"
   },
-  "browser_action": {  
+  "browser_action": {
     "default_icon": "icon.png" ,
     "default_title": "My Chorme Extension",
     "default_popup": "popup.html"
   },
   "content_scripts": [{  
     "matches": ["http://www.theguardian.com/*"],  
-    "js": ["js/filter.js"],  
+    "js": ["js/jquery.js","js/filter.js","js/pagination.js"],  
     "run_at": "document_start"
   }]   
 } 
