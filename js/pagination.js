@@ -1,4 +1,4 @@
-;$(function (){
+$(function (){
     var container = $('.content__article-body');
     
     var cons = container.children();
@@ -8,7 +8,7 @@
     warpper.after("<div class='pagination-warpper'></div>");
     var paginationWarpper = $(".pagination-warpper");
     
-    // console.log($('.container').height());  
+    // console.log($('.container').height());
     var ww = $(window).width();
     var wh = $(window).height() - 50;
 
@@ -56,15 +56,7 @@
     // make btn
     var pagination = $("<div>").addClass("pagination");
     for(var i = 0 ;i <= page.length; i++){
-        var span = $("<span>").css({
-            "display": "inline-block",
-            "width": "3rem",
-            "height": "3rem",
-            "text-align": "center",
-            "margin-right": "20px",
-            "border": "1px solid #ccc",
-            "cursor": "pointer"
-        });
+        var span = $("<span>").addClass("ly-span");
         pagination.append(span.text(i));
     }
     paginationWarpper.append(pagination);

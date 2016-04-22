@@ -12,8 +12,15 @@
     "default_popup": "popup.html"
   },
   "content_scripts": [{  
-    "matches": ["http://www.theguardian.com/*"],  
-    "js": ["js/jquery.js","js/filter.js","js/pagination.js"],  
+    "matches": ["http://www.theguardian.com/*"],
+    "css": ["css/style.css"],
+    "js": ["js/jquery.js","js/filter.js","js/pagination.js","js/translate.js"],  
     "run_at": "document_start"
-  }]   
+  }],
+  "permissions": [
+    "https://api.shanbay.com/*"
+  ],
+  "web_accessible_resources":[
+    "img/*"
+  ]
 } 
